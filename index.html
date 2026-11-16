@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindIt AI | Smart Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1>FindIt <span>AI</span></h1>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#report">Report Item</a>
+                <a href="#items">Browse Items</a>
+                <a href="#matches">AI Matches</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <h2>Lost Something? Find It with AI!</h2>
+        <p>
+            FindIt AI helps connect lost and found items
+            using intelligent text, image and location matching.
+        </p>
+
+        <a href="#report" class="btn">Report an Item</a>
+    </section>
+
+    <!-- Report Item Section -->
+    <section id="report" class="container">
+
+        <h2>Report Lost or Found Item</h2>
+
+        <p>
+            Enter the details below to report your lost or found item.
+        </p>
+
+        <form id="itemForm">
+
+            <label for="item_type">Report Type</label>
+            <select id="item_type" name="item_type" required>
+                <option value="">Select Type</option>
+                <option value="lost">Lost Item</option>
+                <option value="found">Found Item</option>
+            </select>
+
+            <label for="item_name">Item Name</label>
+            <input
+                type="text"
+                id="item_name"
+                name="item_name"
+                placeholder="Example: Black Wallet"
+                required
+            >
+
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Documents">Documents</option>
+                <option value="Bags">Bags</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea
+                id="description"
+                name="description"
+                placeholder="Describe the item..."
+                required
+            ></textarea>
+
+            <label for="location">Location</label>
+            <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Where was it lost or found?"
+                required
+            >
+
+            <label for="item_date">Date</label>
+            <input
+                type="date"
+                id="item_date"
+                name="item_date"
+                required
+            >
+
+            <label for="contact">Contact Information</label>
+            <input
+                type="text"
+                id="contact"
+                name="contact"
+                placeholder="Your contact information"
+            >
+
+            <label for="item_image">Upload Item Image</label>
+            <input
+                type="file"
+                id="item_image"
+                name="image"
+                accept="image/*"
+            >
+
+            <p class="image-help">
+                Upload an image to help identify the item.
+            </p>
+
+            <img
+                id="imagePreview"
+                alt="Selected item preview"
+                style="display:none; max-width:200px; margin:10px 0;"
+            >
+
+            <button type="submit" class="btn">
+                Submit Report
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </section>
+
+    <!-- Browse Items Section -->
+    <section id="items" class="container">
+
+        <h2>Lost and Found Items</h2>
+
+        <p>Browse the reported lost and found items.</p>
+
+        <div id="itemsList">
+            <p>Loading items...</p>
+        </div>
+
+    </section>
+
+    <!-- AI Matching Section -->
+    <section id="matches" class="container">
+
+        <h2>AI Matching Results</h2>
+
+        <p>
+            FindIt AI compares item descriptions, categories
+            and locations to identify possible matches.
+        </p>
+
+        <button
+            type="button"
+            class="btn"
+            onclick="loadMatches()"
+        >
+            Find Matching Items
+        </button>
+
+        <div id="matchesList">
+            <p>Matching results will appear here.</p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>FindIt AI</h3>
+        <p>Smart Lost and Found Assistant</p>
+        <p>Helping people reconnect with their belongings.</p>
+        <p>© 2026 FindIt AI. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
